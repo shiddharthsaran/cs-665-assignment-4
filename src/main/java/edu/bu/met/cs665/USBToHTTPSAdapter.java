@@ -7,12 +7,17 @@ public class USBToHTTPSAdapter implements CustomerData_HTTPS{
     }
 
     @Override
-    public void printCustomer(int customerId) {
-        System.out.println("Customer Id is " + customerId);
+    public String printCustomer(int customerId) {
+        return ("Customer Id is " + customerId);
     }
 
     @Override
-    public void getCustomer_HTTPS(int customerId) {
-        externalDisks.getCustomer_USB(customerId);
+    public String getCustomer_HTTPS(int customerId) {
+        return externalDisks.getCustomer_USB(customerId);
+    }
+
+    @Override
+    public void updateCustomer_HTTPS(int customerId, String customerDetails) {
+        externalDisks.updateCustomer_USB(customerId, customerDetails);
     }
 }
