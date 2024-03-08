@@ -35,12 +35,12 @@ public class TestCases {
 
     @Test
     public void testAdapter(){
-        CustomerData_USB externalDisks = new ExternalDisks();
-        CustomerData_HTTPS adapter = new USBToHTTPSAdapter(externalDisks);
+        CustomerData_HTTPS restAPI = new REST_API();
+        CustomerData_USB adapter = new USBToHTTPSAdapter(restAPI);
 
-        assertEquals("Sorry, customerId: 6 is not found.", adapter.getCustomer_HTTPS(6));
-        adapter.updateCustomer_HTTPS(6, "Sita");
-        assertEquals("Getting Sita data from Hard Disks using USB Connection.", adapter.getCustomer_HTTPS(6));
+        assertEquals("Sorry, customerId: 6 is not found.", adapter.getCustomer_USB(6));
+        adapter.updateCustomer_USB(6, "Sita");
+        assertEquals("Getting Sita data from Hard Disks using USB Connection.", adapter.getCustomer_USB(6));
 
     }
 

@@ -1,23 +1,23 @@
 package edu.bu.met.cs665;
 
-public class USBToHTTPSAdapter implements CustomerData_HTTPS{
-    public CustomerData_USB externalDisks;
-    public USBToHTTPSAdapter(CustomerData_USB externalDisks){
-        this.externalDisks = externalDisks;
+public class USBToHTTPSAdapter implements CustomerData_USB{
+    public CustomerData_HTTPS restAPI;
+    public USBToHTTPSAdapter(CustomerData_HTTPS restAPI){
+        this.restAPI = restAPI;
     }
 
     @Override
     public String printCustomer(int customerId) {
-        return ("Customer Id is " + customerId);
+        return restAPI.printCustomer(customerId);
     }
 
     @Override
-    public String getCustomer_HTTPS(int customerId) {
-        return externalDisks.getCustomer_USB(customerId);
+    public String getCustomer_USB(int customerId) {
+        return restAPI.getCustomer_HTTPS(customerId);
     }
 
     @Override
-    public void updateCustomer_HTTPS(int customerId, String customerDetails) {
-        externalDisks.updateCustomer_USB(customerId, customerDetails);
+    public void updateCustomer_USB(int customerId, String customerDetails) {
+        restAPI.updateCustomer_HTTPS(customerId, customerDetails);
     }
 }
