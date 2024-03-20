@@ -11,13 +11,21 @@ package edu.bu.met.cs665;
 public class REST_API implements CustomerData_HTTPS{
     // Instance of CustomerDataInterface to handle customer data
     CustomerDataInterface customerData = new CustomerData();
-    // Method to print customer information
+    /**
+     * Method to print customer information.
+     * @param customerId The ID of the customer whose information needs to be printed.
+     * @return The printed customer information.
+     */
     @Override
     public String printCustomer(int customerId) {
         return("Customer Name is "+ customerData.searchCustomerData(customerId));
     }
 
-    // Method to retrieve customer data over HTTPS
+    /**
+     * Method to retrieve customer data over HTTPS.
+     * @param customerId The ID of the customer whose data needs to be retrieved.
+     * @return The retrieved customer data over HTTPS.
+     */
     @Override
     public String getCustomer_HTTPS(int customerId) {
         String custDets =  customerData.searchCustomerData(customerId);
@@ -31,7 +39,11 @@ public class REST_API implements CustomerData_HTTPS{
 
     }
 
-    // Method to update customer data over HTTPS
+    /**
+     * Method to update customer data over HTTPS.
+     * @param customerId The ID of the customer whose data needs to be updated.
+     * @param customerDetails The updated details of the customer.
+     */
     @Override
     public void updateCustomer_HTTPS(int customerId, String customerDetails) {
         customerData.updateCustomerData(customerId, customerDetails);

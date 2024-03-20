@@ -25,7 +25,11 @@ public class CustomerData implements CustomerDataInterface{
 
 
 
-    // Method to search for customer data by customer ID
+    /**
+     * Method to search for customer data by customer ID.
+     * @param customerId The ID of the customer to search for.
+     * @return The customer data corresponding to the provided ID, or an error message if not found.
+     */
     @Override
     public String searchCustomerData(int customerId) {
 
@@ -37,7 +41,11 @@ public class CustomerData implements CustomerDataInterface{
         }
 
     }
-    // Method to update customer data by customer ID
+    /**
+     * Method to update customer data by customer ID.
+     * @param customerId The ID of the customer whose data needs to be updated.
+     * @param customerDetails The updated details of the customer.
+     */
     @Override
     public void updateCustomerData(int customerId, String customerDetails) {
         this.dict.put(customerId, customerDetails);

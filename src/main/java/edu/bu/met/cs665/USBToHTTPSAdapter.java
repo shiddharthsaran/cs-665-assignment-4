@@ -16,17 +16,29 @@ public class USBToHTTPSAdapter implements CustomerData_USB{
     public USBToHTTPSAdapter(CustomerData_HTTPS restAPI){
         this.restAPI = restAPI;
     }
-    // Method to print customer information
+    /**
+     * Method to print customer information.
+     * @param customerId The ID of the customer whose information needs to be printed.
+     * @return The printed customer information.
+     */
     @Override
     public String printCustomer(int customerId) {
         return restAPI.printCustomer(customerId);
     }
-    // Method to retrieve customer data over USB using HTTPS
+    /**
+     * Method to retrieve customer data over USB using HTTPS.
+     * @param customerId The ID of the customer whose data needs to be retrieved.
+     * @return The retrieved customer data over USB using HTTPS.
+     */
     @Override
     public String getCustomer_USB(int customerId) {
         return restAPI.getCustomer_HTTPS(customerId);
     }
-    // Method to update customer data over USB using HTTPS
+    /**
+     * Method to update customer data over USB using HTTPS.
+     * @param customerId The ID of the customer whose data needs to be updated.
+     * @param customerDetails The updated details of the customer.
+     */
     @Override
     public void updateCustomer_USB(int customerId, String customerDetails) {
         restAPI.updateCustomer_HTTPS(customerId, customerDetails);

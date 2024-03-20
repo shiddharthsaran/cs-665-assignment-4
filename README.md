@@ -24,11 +24,15 @@ For each assignment, please answer the following:
 
 - Explain the level of flexibility in your implementation, including how new object types can
 be easily added or removed in the future.
+  - Implementation is flexible due to the usage of interfaces - CustomerData_USB, CustomerData_HTTPS, CustomerDataInterface.
 - Discuss the simplicity and understandability of your implementation, ensuring that it is
 easy for others to read and maintain.
+  - For simplicity and understanding I have added comments and doc blocks for all classes and used descriptive names to aid in understanding.
 - Describe how you have avoided duplicated code and why it is important.
+  - Duplicated code is minimized by utilizing interfaces ensures consistency and reduces the chances of errors when making changes to the codebase.
 - If applicable, mention any design patterns you have used and explain why they were
 chosen.
+  - I have chosen and implemented Adapter Pattern as the requirement is to make the e new system’s interface with the old system’s API.
 
 
 # Maven Commands
